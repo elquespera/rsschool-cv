@@ -8,7 +8,7 @@
 
 ## My Goals
 
-I'm a scientist/amateur developer who aims to become a professional **front-end developer**.
+I'm a scientist/amateur developer who aims to become a professional **front-end developer**. I've been coding on and off since I was little, then switched to my Biophysics degree. Now I want to try my hand at coding again.
 
 ## My Skills
 
@@ -45,4 +45,3 @@ function markovPlot(trajectories, canvas) {
  - English, **C1**, fluent
  - Russian, **native**
  - Czech, **B1**
-##
