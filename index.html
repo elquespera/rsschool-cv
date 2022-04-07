@@ -1,0 +1,93 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <title>My CV - Pavel Grinkevich</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="content">
+
+      <header>
+        <h1>Pavel Grinkevich</h1>
+      </header>
+
+      <nav>
+        <ul>
+          <li>
+            <b>Email: </b>
+            <a href="mailto:pavel.grinkevich@gmail.com">pavel.grinkevich@gmail.com</a>
+          </li>
+          <li>
+            <b>Github: </b>
+            <a href="https://github.io/elquespera">github.io/elquespera</a>
+          </li>
+          <li>
+            <b>Phone: </b>
+            +420 608831542
+          </li>
+        </ul>
+      </nav>
+
+
+      <main>
+        <section>
+          <h2>My Goals</h2>
+          <p>I'm a scientist/amateur developer who aims to become a professional <b>front-end developer</b>. I've been coding on and off since I was little, then switched to my Biophysics degree. Now I want to try my hand at coding again.</p>
+        </section>
+        <section>
+          <h2>My Skills</h2>
+          <ul>
+            <li>HTML/CSS</li>
+            <li>JavaScript</li>
+          </ul>
+        </section>
+        <section>
+          <h2>My Code</h2>
+          <pre>
+            <code>
+//plot random walk trajectories in random colors from 2d array
+function markovPlot(trajectories, canvas) {
+  scaleX = canvas.width / trajectories[0].length;
+  scaleY = scaleX;
+  startY = Math.round(canvas.height / scaleY / 2);
+  startX = 0;
+  context = canvas.getContext("2d");
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  for (i = 0; i &lt; trajectories.length; i++) {
+    x = startX; y = startY;
+    context.beginPath();
+    context.strokeStyle = '#'+Math.floor(Math.random()*16777215).toString(16);
+    context.moveTo(x * scaleX, y * scaleY);
+    for (j = 1; j &lt; trajectories[i].length; j++) {
+      x += scaleX;
+      y = (startY + trajectories[i][j]) * scaleY;
+      context.lineTo(x, y);
+      context.stroke();
+    }
+  }
+}            
+           </code>
+          </pre>
+        </section>
+        <section>
+          <h2>My Languages</h2>
+            <ul>
+              <li>English, <b>C1</b>, fluent</li>
+              <li>Russian, <b>native</b></li>
+              <li>Czech, <b>B1</b></li> 
+            </ul>         
+        </section>                
+      </main>
+
+      <footer>
+        <a href="#">Pavel Grinkevich</a>
+        <a href="https://github.io/elquespera/">GitHub</a>
+        <span>
+          <script> document.write(new Date().toLocaleDateString()); </script>
+        </span>
+        <a href="https://rs.school/"><img src="img/rs_school.svg" alt="RS School" width="100"></a>
+      </footer>
+    </div>
+  </body>
+</html>
