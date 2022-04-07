@@ -55,14 +55,14 @@
   <i>context</i>.clearRect(0, 0, <i>canvas</i>.width, <i>canvas</i>.<i>height</i>);
   <b>for</b> (<i>i</i> = 0; <i>i</i> &lt; trajectories.length; <i>i</i>++) {
     <b>let</b> <i>x</i> = <i>startX</i>; <b>let</b> <i>y</i> = <i>startY</i>;
-    <i>context</i>.beginPath();
+    <i>context</i>.beginPath(); 
     <i>context</i>.strokeStyle = '#'+Math.floor(Math.random()*16777215).toString(16);
     <i>context</i>.moveTo(<i>x</i> * <i>scaleX</i>, <i>y</i> * <i>scaleY</i>);
-    <b>for</b> (<i>j</i> = 1; <i>j</i> &lt; <i>trajectories<i>[<i>i</i>].<i>length</i>; <i>j</i>++) {
+    <b>for</b> (<i>j</i> = 1; <i>j</i> &lt; <i>trajectories</i>[<i>i</i>].<i>length</i>; <i>j</i>++) {
       <i>x</i> += <i>scaleX</i>;
       <i>y</i> = (<i>startY</i> + <i>trajectories</i>[<i>i</i>][<i>j</i>]) * <i>scaleY</i>;
       <i>context</i>.lineTo(<i>x</i>, <i>y</i>);
-      <i>context</i>.stroke();
+      <i>context</i>.stroke(); 
     }
   }
 }</code>
