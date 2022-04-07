@@ -40,6 +40,7 @@
           <ul>
             <li>HTML/CSS</li>
             <li>JavaScript</li>
+          </ul>
         </section>
         <section>
           <h2>My Code</h2>
@@ -53,12 +54,12 @@ function markovPlot(trajectories, canvas) {
   startX = 0;
   context = canvas.getContext("2d");
   context.clearRect(0, 0, canvas.width, canvas.height);
-  for (i = 0; i < trajectories.length; i++) {
+  for (i = 0; i &lt; trajectories.length; i++) {
     x = startX; y = startY;
     context.beginPath();
     context.strokeStyle = '#'+Math.floor(Math.random()*16777215).toString(16);
     context.moveTo(x * scaleX, y * scaleY);
-    for (j = 1; j < trajectories[i].length; j++) {
+    for (j = 1; j &lt; trajectories[i].length; j++) {
       x += scaleX;
       y = (startY + trajectories[i][j]) * scaleY;
       context.lineTo(x, y);
@@ -74,7 +75,8 @@ function markovPlot(trajectories, canvas) {
             <ul>
               <li>English, <b>C1</b>, fluent</li>
               <li>Russian, <b>native</b></li>
-              <li>Czech, <b>B1</b></li>          
+              <li>Czech, <b>B1</b></li> 
+            </ul>         
         </section>                
       </main>
 
