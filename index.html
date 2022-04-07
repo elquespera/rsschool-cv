@@ -46,23 +46,23 @@
           <h2>My Code</h2>
           <pre>
             <code>//plot random walk trajectories in random colors from 2d array
-function markovPlot(trajectories, canvas) {
-  let scaleX = canvas.width / trajectories[0].length;
-  let scaleY = scaleX;
-  let startY = Math.round(canvas.height / scaleY / 2);
-  let startX = 0;
-  let context = canvas.getContext("2d");
-  context.clearRect(0, 0, canvas.width, canvas.height);
-  for (i = 0; i &lt; trajectories.length; i++) {
-    let x = startX; let y = startY;
-    context.beginPath();
-    context.strokeStyle = '#'+Math.floor(Math.random()*16777215).toString(16);
-    context.moveTo(x * scaleX, y * scaleY);
-    for (j = 1; j &lt; trajectories[i].length; j++) {
-      x += scaleX;
-      y = (startY + trajectories[i][j]) * scaleY;
-      context.lineTo(x, y);
-      context.stroke();
+<b>function</b> markovPlot(<i>trajectories</i>, <i>canvas</i>) {
+  <b>let</b> <i>scaleX</i> = <i>canvas</i>.<i>width</i> / <i>trajectories</i>[0].<i>length</i>;
+  <b>let</b> <i>scaleY</i> = <i>scaleX</i>;
+  <b>let</b> <i>startY</i> = Math.round(<i>canvas</i>.height / <i>scaleY</i> / 2);
+  <b>let</b> <i>startX</i> = 0;
+  <b>let</b> <i>context</i> = <i>canvas</i>.getContext("2d");
+  <i>context</i>.clearRect(0, 0, <i>canvas</i>.width, <i>canvas</i>.<i>height</i>);
+  <b>for</b> (<i>i</i> = 0; <i>i</i> &lt; trajectories.length; <i>i</i>++) {
+    <b>let</b> <i>x</i> = <i>startX</i>; <b>let</b> <i>y</i> = <i>startY</i>;
+    <i>context</i>.beginPath();
+    <i>context</i>.strokeStyle = '#'+Math.floor(Math.random()*16777215).toString(16);
+    <i>context</i>.moveTo(<i>x</i> * <i>scaleX</i>, <i>y</i> * <i>scaleY</i>);
+    <b>for</b> (<i>j</i> = 1; <i>j</i> &lt; <i>trajectories<i>[<i>i</i>].<i>length</i>; <i>j</i>++) {
+      <i>x</i> += <i>scaleX</i>;
+      <i>y</i> = (<i>startY</i> + <i>trajectories</i>[<i>i</i>][<i>j</i>]) * <i>scaleY</i>;
+      <i>context</i>.lineTo(<i>x</i>, <i>y</i>);
+      <i>context</i>.stroke();
     }
   }
 }</code>
