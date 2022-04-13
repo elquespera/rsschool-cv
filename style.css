@@ -34,11 +34,41 @@ nav ul li {
 }
 
 code {
-	background-color: #F0F0F0;
+	background-color: #E0E0E0;
+	color: black;
 	border-radius: 12px;
 	display: block;
 	padding: 2.5em;
 	margin-left: 0em;
+}
+
+.code-comment {
+	color: gray;
+	font-style: italic;
+}
+
+.code-reserved {
+	color: purple;
+}
+
+.code-var {
+	color: blue;
+}
+
+.code-function {
+	color: orangered;
+}
+
+.code-property {
+	color: red;
+}
+
+.code-string {
+	color: green;
+}
+
+.code-null {
+	color: darkgreen;
 }
 
 #projects {

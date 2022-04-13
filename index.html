@@ -10,7 +10,7 @@
         <h1>Pavel Grinkevich</h1>
       </header>
       <nav>
-        <ul>
+        <ul> 
           <li>
             <a href="https://github.io/elquespera">github.io/elquespera</a>
           </li>
@@ -34,26 +34,25 @@
         <section>
           <h2>My Code</h2>
           <pre>
-            <code>//plot random walk trajectories in random colors from 2d array
-<b>function</b> markovPlot(<i>trajectories</i>, <i>canvas</i>) {
-  <b>let</b> <i>scaleX</i> = <i>canvas</i>.<i>width</i> / <i>trajectories</i>[0].<i>length</i>;
-  <b>let</b> <i>scaleY</i> = <i>scaleX</i>;
-  <b>let</b> <i>startY</i> = Math.round(<i>canvas</i>.height / <i>scaleY</i> / 2);
-  <b>let</b> <i>startX</i> = 0;
-  <b>let</b> <i>context</i> = <i>canvas</i>.getContext("2d");
-  <i>context</i>.clearRect(0, 0, <i>canvas</i>.width, <i>canvas</i>.<i>height</i>);
-  <b>for</b> (<i>i</i> = 0; <i>i</i> &lt; trajectories.length; <i>i</i>++) {
-    <b>let</b> <i>x</i> = <i>startX</i>; <b>let</b> <i>y</i> = <i>startY</i>;
-    <i>context</i>.beginPath(); 
-    <i>context</i>.strokeStyle = '#'+Math.floor(Math.random()*16777215).toString(16);
-    <i>context</i>.moveTo(<i>x</i> * <i>scaleX</i>, <i>y</i> * <i>scaleY</i>);
-    <b>for</b> (<i>j</i> = 1; <i>j</i> &lt; <i>trajectories</i>[<i>i</i>].<i>length</i>; <i>j</i>++) {
-      <i>x</i> += <i>scaleX</i>;
-      <i>y</i> = (<i>startY</i> + <i>trajectories</i>[<i>i</i>][<i>j</i>]) * <i>scaleY</i>;
-      <i>context</i>.lineTo(<i>x</i>, <i>y</i>);
-      <i>context</i>.stroke(); 
-    }
-  }
+            <code><span class="code-comment">// Amino acid contributions to extinction coefficient at 280nm</span>
+<span class="code-reserved">const</span> <span class="code-var">WYC_COEFF</span> = {
+	<span class="code-reserved">W</span>: <span class="code-var">5500</span>,
+	<span class="code-reserved">Y</span>: <span class="code-var">1490</span>,
+	<span class="code-reserved">C</span>: <span class="code-var">125</span>
+}
+
+<span class="code-comment">// Calculate protein extinction coefficient at 280nm
+// using ε = (nW x 5500) + (nY x 1490) + (nC x 125)</span>
+<span class="code-reserved">function</span> <span class="code-function">calculateEcoeff280nm</span> (<span class="code-var">sequence</span>) {
+	<span class="code-reserved">let <span class="code-var">E</span></span> = <span class="code-null">null</span>;
+	<span class="code-var">sequence</span> = <span class="code-var">sequence</span>.<span class="code-function">toUpperCase</span>();
+	<span class="code-reserved">for</span> (<span class="code-reserved">let</span> <span class="code-var">x</span> in <span class="code-var">WYC_COEFF</span>) {
+		<span class="code-reserved">let</span> <span class="code-var">n</span> = <span class="code-var">sequence</span>.<span class="code-function">match</span>(new <span class="code-property">RegExp</span>(<span class="code-var">x</span>, <span class="code-string">'g'</span>));
+		<span class="code-reserved">if</span> (<span class="code-var">n</span> !=<span class="code-null">null</span>) { 
+                  <span class="code-var">E</span> += <span class="code-var">n</span>.<span class="code-property">length</span> * <span class="code-var">WYC_COEFF</span>[<span class="code-var">x</span>];
+                }
+	}
+	<span class="code-reserved">return</span> <span class="code-var">E</span>;
 }</code>
           </pre>
         </section>
