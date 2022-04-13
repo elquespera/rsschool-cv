@@ -4,7 +4,6 @@
 
  - **Email**: [pavel.grinkevich@gmail.com](mailto:pavel.grinkevich@gmail.com "Email me")
  - **Github**: [github.io/elquespera](https://github.io/elquespera "My github")
- - **Phone**: +420 608831542
 
 ## My Goals
 

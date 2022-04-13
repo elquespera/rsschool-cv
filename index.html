@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html lang="en">
   <head>
     <title>My CV - Pavel Grinkevich</title>
@@ -7,86 +6,87 @@
   </head>
   <body>
     <div id="content">
-
       <header>
         <h1>Pavel Grinkevich</h1>
+        <nav>
+          <ul> 
+            <li>
+              <a href="https://github.io/elquespera">github.io/elquespera</a>
+            </li>
+            <li>
+              <a href="mailto:pavel.grinkevich@gmail.com">pavel.grinkevich@gmail.com</a>
+            </li>
+          </ul>
+        </nav>
       </header>
-
-      <nav>
-        <ul>
-          <li>
-            <b>Email: </b>
-            <a href="mailto:pavel.grinkevich@gmail.com">pavel.grinkevich@gmail.com</a>
-          </li>
-          <li>
-            <b>Github: </b>
-            <a href="https://github.io/elquespera">github.io/elquespera</a>
-          </li>
-          <li>
-            <b>Phone: </b>
-            +420 608831542
-          </li>
-        </ul>
-      </nav>
-
 
       <main>
         <section>
-          <h2>My Goals</h2>
+          <h2>About Me</h2>
           <p>I'm a scientist/amateur developer who aims to become a professional <b>front-end developer</b>. I've been coding on and off since I was little, then switched to my Biophysics degree. Now I want to try my hand at coding again.</p>
         </section>
         <section>
           <h2>My Skills</h2>
           <ul>
-            <li>HTML/CSS</li>
+            <li>HTML5/CSS3</li>
             <li>JavaScript</li>
+            <li>Git</li>
           </ul>
         </section>
         <section>
           <h2>My Code</h2>
           <pre>
-            <code>
-//plot random walk trajectories in random colors from 2d array
-function markovPlot(trajectories, canvas) {
-  scaleX = canvas.width / trajectories[0].length;
-  scaleY = scaleX;
-  startY = Math.round(canvas.height / scaleY / 2);
-  startX = 0;
-  context = canvas.getContext("2d");
-  context.clearRect(0, 0, canvas.width, canvas.height);
-  for (i = 0; i &lt; trajectories.length; i++) {
-    x = startX; y = startY;
-    context.beginPath();
-    context.strokeStyle = '#'+Math.floor(Math.random()*16777215).toString(16);
-    context.moveTo(x * scaleX, y * scaleY);
-    for (j = 1; j &lt; trajectories[i].length; j++) {
-      x += scaleX;
-      y = (startY + trajectories[i][j]) * scaleY;
-      context.lineTo(x, y);
-      context.stroke();
-    }
-  }
-}            
-           </code>
+            <code><span class="code-comment">// Amino acid contributions to extinction coefficient at 280nm</span>
+<span class="code-reserved">const</span> <span class="code-var">WYC_COEFF</span> = {
+	<span class="code-reserved">W</span>: <span class="code-var">5500</span>,
+	<span class="code-reserved">Y</span>: <span class="code-var">1490</span>,
+	<span class="code-reserved">C</span>: <span class="code-var">125</span>
+}
+
+<span class="code-comment">// Calculate protein extinction coefficient at 280nm
+// using ε = (nW x 5500) + (nY x 1490) + (nC x 125)</span>
+<span class="code-reserved">function</span> <span class="code-function">calculateEcoeff280nm</span> (<span class="code-var">sequence</span>) {
+	<span class="code-reserved">let <span class="code-var">E</span></span> = <span class="code-null">null</span>;
+	<span class="code-var">sequence</span> = <span class="code-var">sequence</span>.<span class="code-function">toUpperCase</span>();
+	<span class="code-reserved">for</span> (<span class="code-reserved">let</span> <span class="code-var">x</span> in <span class="code-var">WYC_COEFF</span>) {
+		<span class="code-reserved">let</span> <span class="code-var">n</span> = <span class="code-var">sequence</span>.<span class="code-function">match</span>(new <span class="code-property">RegExp</span>(<span class="code-var">x</span>, <span class="code-string">'g'</span>));
+		<span class="code-reserved">if</span> (<span class="code-var">n</span> != <span class="code-null">null</span>) { 
+                  <span class="code-var">E</span> += <span class="code-var">n</span>.<span class="code-property">length</span> * <span class="code-var">WYC_COEFF</span>[<span class="code-var">x</span>];
+                }
+	}
+	<span class="code-reserved">return</span> <span class="code-var">E</span>;
+}</code>
           </pre>
         </section>
         <section>
-          <h2>My Languages</h2>
+          <h2>My Projects</h2>
+            <div id="projects">
+              <div>
+                <a href="https://elquespera.github.io/mortgage-calc">
+                  <img src="img/mortgage-calc.png" alt="Mortage calculator">
+                </a>  
+              </div>
+              <div>
+                <a href="https://elquespera.github.io/protein-properties">
+                  <img src="img/protein-properties.png" alt="Protein properties">
+                </a>
+              </div>
+            </div>
+        </section>        
+        <section>
+          <h2>Education & Languages</h2>
             <ul>
-              <li>English, <b>C1</b>, fluent</li>
-              <li>Russian, <b>native</b></li>
-              <li>Czech, <b>B1</b></li> 
+              <li><b>English</b>: C1, fluent</li>
+              <li><b>Russian</b>: native</li>
+              <li><b>Czech</b>: B1</li> 
             </ul>         
-        </section>                
+        </section>            
       </main>
 
       <footer>
-        <a href="#">Pavel Grinkevich</a>
-        <a href="https://github.io/elquespera/">GitHub</a>
-        <span>
-          <script> document.write(new Date().toLocaleDateString()); </script>
-        </span>
-        <a href="https://rs.school/"><img src="img/rs_school.svg" alt="RS School" width="100"></a>
+        <a href="https://rs.school/"><img src="img/rs_school.svg" alt="RS School"></a>
+        <div id="date">2022, April</div>
+        <a href="https://github.io/elquespera/"><img src="img/GitHub_Logo.png" alt="My GitHub"></a>
       </footer>
     </div>
   </body>
