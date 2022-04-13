@@ -3,12 +3,13 @@ body {
 }
 #content {
 	margin: auto;
-	width: 60%;
+	width: 70%;
 	min-width: 615px;
+	max-width: 900px;;
 	font-family: sans-serif;
 	background-color: white;
 	padding: 2.5rem;
-	font-family: 'Segoe UI';
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 ul {
@@ -34,12 +35,13 @@ nav ul li {
 }
 
 code {
-	background-color: #E0E0E0;
+	font-family: Consolas,"courier new";
+	font-size: 0.9em;
+	background-color: #F0F0F0;
 	color: black;
-	border-radius: 12px;
+	border-radius: 0.8em;
 	display: block;
 	padding: 2.5em;
-	margin-left: 0em;
 }
 
 .code-comment {
@@ -48,7 +50,7 @@ code {
 }
 
 .code-reserved {
-	color: purple;
+	color: blueviolet;
 }
 
 .code-var {
@@ -56,7 +58,7 @@ code {
 }
 
 .code-function {
-	color: orangered;
+	color: coral;
 }
 
 .code-property {
@@ -72,19 +74,20 @@ code {
 }
 
 #projects {
-	height: 15em;
+	height: 16em;
 }
 
 #projects > div {
 	width: 50%;
 	height: 100%;
+	position: relative;
 	float: left;
 }
 
 #projects * img {
-	margin: auto;
+	margin: 5% 10%;
 	width: 80%;
-	opacity: 0.5;
+	opacity: 0.7;
 }
 
 #projects * img:hover {
